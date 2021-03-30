@@ -57,11 +57,11 @@ class AE(nn.Module):
         return reconstructed, code
 		
 
-def create_train_loader(gsrData, batch_size=10):
+def create_train_loader(edaData, batch_size=10):
 	train_loader = []
 	tensor_data = []
 	
-	for data in gsrData:
+	for data in edaData:
 		tensor_data.append(np.array(data).flatten())
 		if (len(tensor_data) == batch_size):
 			train_loader.append(tensor_data)

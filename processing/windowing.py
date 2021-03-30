@@ -8,7 +8,7 @@ def make_windows(data, sample_rate, windowsize=120, overlap=0, min_size=5):
     Parameters
     ----------
     data : 1-d array 
-        array containing gsr data
+        array containing eda data
     sample_rate : int or float
         sample rate of the data stream in 'data'
     windowsize : int 

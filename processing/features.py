@@ -20,19 +20,19 @@ def calculate_max_peaks(data):
   else:
     return np.max(data)
   
-def calculate_mean_gsr(data):
-  '''mean of the gsr data
-    Funcion that finds the mean of the gsr data
+def calculate_mean_eda(data):
+  '''mean of the eda data
+    Funcion that finds the mean of the eda data
 	
     Parameters
     ----------
     data : 1-d array 
-        array containing gsr data
+        array containing eda data
     
     Returns
     -------
     mean(data) : int or float
-        mean value of the gsr data
+        mean value of the eda data
   '''
   return np.mean(data)
   

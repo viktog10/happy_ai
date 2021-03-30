@@ -11,7 +11,7 @@ def butter_lowpassfilter(data, cutoff, sample_rate, order=2):
     Parameters
     ----------
 	data : 1-d array
-        array containing the gsr data
+        array containing the eda data
     cutoff : int or float
         frequency in Hz that acts as cutoff for filter.
     sample_rate : int or float
@@ -24,7 +24,7 @@ def butter_lowpassfilter(data, cutoff, sample_rate, order=2):
     Returns
     -------
     y : 1-d array
-        filtered gsr data
+        filtered eda data
   '''
   nyq = 0.5 * sample_rate
   normal_cutoff = cutoff/nyq

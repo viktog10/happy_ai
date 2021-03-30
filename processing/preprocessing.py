@@ -3,14 +3,14 @@ import numpy as np
 import scipy.signal as sps
 
 
-def resample_data(gsrdata, prevSR, newSR):
+def resample_data(edadata, prevSR, newSR):
   '''calculates rolling mean
     Function to calculate moving average over the passed data
 	
     Parameters
     ----------
-    gsrdata : 1-d array
-        array containing the gsr data
+    edadata : 1-d array
+        array containing the eda data
     prevSR : int or float 
         the previous sample rate of the data
     newSR : int or float
@@ -21,30 +21,30 @@ def resample_data(gsrdata, prevSR, newSR):
     data : 1-d array
         array containing the resampled data
   '''
-  number_of_samples = int(round(len(gsrdata) * float(newSR) / prevSR))
-  data = sps.resample(gsrdata, number_of_samples)
+  number_of_samples = int(round(len(edadata) * float(newSR) / prevSR))
+  data = sps.resample(edadata, number_of_samples)
   
   return data
 
 	
-def normalization(gsrdata):
+def normalization(edadata):
   '''min max normalization
-    Function to calculate normalized gsr data
+    Function to calculate normalized eda data
 	
     Parameters
     ----------
-    gsrdata : 1-d array
-        array containing the gsr data
+    edadata : 1-d array
+        array containing the eda data
 		
     Returns
     -------
-    n_gsrdata : 1-d array
-        normalized gsr data
+    n_edadata : 1-d array
+        normalized eda data
   '''
-  gsrdata = gsrdata-(np.min(gsrdata))
-  gsrdata /= (np.max(gsrdata) - np.min(gsrdata))
-  n_gsrdata = gsrdata
-  return n_gsrdata
+  edadata = edadata-(np.min(edadata))
+  edadata /= (np.max(edadata) - np.min(edadata))
+  n_edadata = edadata
+  return n_edadata
 
 def rolling_mean(data, windowsize, sample_rate):
   '''calculates rolling mean
@@ -53,7 +53,7 @@ def rolling_mean(data, windowsize, sample_rate):
     Parameters
     ----------
     data : 1-d array
-        array containing the gsr data
+        array containing the eda data
     windowsize : int or float 
         the moving average window size in seconds 
     sample_rate : int or float
